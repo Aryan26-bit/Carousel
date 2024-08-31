@@ -236,7 +236,10 @@ gap: 1vh;
 
 @media (max-width: 768px) {
   .carousel-container {
-    padding: 10px;
+       overflow-x: hidden;
+        width: fit-content;
+        margin-left: -1vh;
+        padding: 10px;
   }
 
   .plan-features li {
