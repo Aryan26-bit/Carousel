@@ -1,38 +1,250 @@
-.App {
-  text-align: center;
+.carousel-container {
+  position: relative;
+  width: 100%;
+  padding: 3vh;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.carousel-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.carousel-header
+{
   display: flex;
   flex-direction: column;
+  gap: 1vh;
+  margin-top:-1.5vh !important;
+  align-items: flex-start;
+  font-size: 2vh;
+  padding-bottom: 2vh;
+}
+
+.carousel-header-content
+{
+  display: flex;
+  padding-left: 2vh;
+  flex-direction: row;
   align-items: center;
+  font-size: 2vh;
+  padding-bottom: 2vh;
+}
+
+.top-header
+{
+  padding-top: 0.5vh;
+  gap: 0.5vh;
+  justify-content: end;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  background-color: #F5F5F5;
+  width: 100%;
+  top: 0px;
+  padding-right: 2vh;
+}
+
+.header-title
+{
+  font-weight: 500;
+  color:#242F35;
+}
+
+.carousel-card {
+  min-width: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-card.active {
+  display: flex;
+}
+
+.plan-banner {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.plan-content {
+  text-align: center;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+    align-items: center;
+}
+
+
+
+.carousel-dots {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+
+.card-main-title
+{
+font-size: 2vh;
+  padding-left:2vh;
+  padding-right: 2vh;
+}
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.dot.active {
+  background-color: #717171;
+}
+.plan-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.plan-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+
+.plan-tag
+{
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  background: none !important;
+  text-align: end;
+}
+.plan-tag {
+  font-size: 12px;
+  color: #fff;
+  background-color: #464646;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+.button-layouting
+{
+  color: #ffffff;
+  font-weight: bold;
+display: flex;
+flex-direction: column;
+gap: 1vh;
+
+}
+
+.button-title
+{
+  font-weight: bold;
+  font-size: 2vh;
+  color: #ffffff;
+}
+
+.plan-card-name
+{
+  padding: 15px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.plan-features {
+  list-style: none;
+  padding: 0;
+  color: #464646;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.plan-features li {
+  font-size: 14px;
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.plan-features li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #464646;
+  font-size: 14px;
+}
+
+.plan-features li.locked::before {
+  content: '✖';
+  color: #464646;
+}
+
+.plan-features li.locked {
+  color: #aaa;
+}
+
+.cta-button {
+  padding: 15px 20px;
+  background-color: #377E8B;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.cta-button:hover {
+  opacity: 0.9;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+  z-index: 10;
+}
+
+.carousel-button.left {
+  left: 10px;
+}
+
+.carousel-button.right {
+  right: 10px;
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .plan-features li {
+    font-size: 12px;
+  }
+
+  .cta-button {
+    width: 100%;
+    padding: 15px;
   }
 }
